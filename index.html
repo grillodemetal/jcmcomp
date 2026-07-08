@@ -1,11 +1,600 @@
-<body style="background-color: black;">
-<div style="position: relative; width: 100%; height: 0; padding-top: 393.5578%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAGms-oPc9g/sXkPSyDpffKYyELAB7wAqA/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGms-oPc9g&#x2F;sXkPSyDpffKYyELAB7wAqA&#x2F;watch?utm_content=DAGms-oPc9g&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Sitio web de tecnología degradado en azul, morado y blanco</a> de Karlos Muñoz
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCM Comp - Soporte Técnico y Servicios IT</title>
+	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',   // Vibrant tech blue
+                        secondary: '#1e40af', // Deep tech blue 
+                        accent: '#3b82f6',    // Medium tech blue
+                        dark: '#111827',      // Dark slate
+                        light: '#f9fafb',     // Cool light gray
+                        tech: '#1d4ed8'       // Additional tech accent
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', 'Century Gothic', 'Futura', 'Avenir', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-pattern {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(30, 64, 175, 0.9) 100%),
+                        url('https://www.jcmcomp.com.co/img/img002.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover;
+        }
+        
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .whatsapp-pulse {
+            animation: pulse-slow 2s infinite;
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0.2);
+        }
+        
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.1);
+            background-color: #f9fafb;
+        }
+        
+        .tabs-container .tab {
+            transition: all 0.3s ease;
+        }
+        
+        .tabs-container .tab.active {
+            border-bottom: 3px solid #2563eb;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573053607280" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center whattsapp-pulse">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <i class="fas fa-server text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-dark">JCM Comp</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-dark hover:text-primary font-medium">Inicio</a>
+                <a href="#servicios" class="text-dark hover:text-primary font-medium">Servicios</a>
+                <a href="#nosotros" class="text-dark hover:text-primary font-medium">Nosotros</a>
+                <a href="#testimonios" class="text-dark hover:text-primary font-medium">Testimonios</a>
+                <a href="#contacto" class="text-dark hover:text-primary font-medium">Contacto</a>
+            </div>
+            
+            <div class="hidden md:block">
+                <a href="https://wa.me/573053607280" target="_blank" class="bg-primary hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium transition">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-dark">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white shadow-lg py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#inicio" class="text-dark hover:text-primary font-medium py-2">Inicio</a>
+                <a href="#servicios" class="text-dark hover:text-primary font-medium py-2">Servicios</a>
+                <a href="#nosotros" class="text-dark hover:text-primary font-medium py-2">Nosotros</a>
+                <a href="#testimonios" class="text-dark hover:text-primary font-medium py-2">Testimonios</a>
+                <a href="#contacto" class="text-dark hover:text-primary font-medium py-2">Contacto</a>
+                <a href="https://wa.me/573053607280" target="_blank" class="bg-primary text-white px-4 py-2 rounded-md font-medium text-center">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-pattern h-screen flex items-center">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-2xl bg-white/90 p-8 rounded-xl backdrop-blur-sm">
+                <h1 class="text-4xl md:text-6xl font-bold text-dark mb-6">
+                    Transformación Digital <span class="text-primary">Empresarial</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Implementamos soluciones tecnológicas innovadoras que impulsan la eficiencia operativa y la ventaja competitiva de tu empresa.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/573053607280" target="_blank" class="bg-[#25d366] hover:bg-green-600 text-white px-6 py-3 rounded-md font-bold transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Habla con un técnico
+                    </a>
+                    <a href="#servicios" class="bg-white border-2 border-primary text-primary hover:bg-blue-50 px-6 py-3 rounded-md font-bold transition">
+                        Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                    Nuestros <span class="text-primary">Servicios</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Soluciones integrales para todas tus necesidades tecnológicas, con respuesta inmediata y soporte 24/7
+                </p>
+            </div>
+            
+            <div class="services-grid gap-8 grid">
+                <!-- Service Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden transition hover:shadow-lg hover:border-primary">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-desktop text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Soporte Técnico</h3>
+                        <p class="text-gray-600 mb-6">
+                            Asistencia remota y presencial para resolver problemas de hardware, software y sistemas operativos. Atención inmediata.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Solicitar soporte <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Seguridad Informática</h3>
+                        <p class="text-gray-600 mb-6">
+                            Protección avanzada contra amenazas digitales, análisis de vulnerabilidades y planes de contingencia para tus sistemas.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Proteger mi negocio <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Redes y Conectividad</h3>
+                        <p class="text-gray-600 mb-6">
+                            Diseño, implementación y mantenimiento de infraestructura de redes. Soluciones WAN, LAN y VPN seguras y escalables.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Optimizar mi red <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-cloud text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Servicios en la Nube</h3>
+                        <p class="text-gray-600 mb-6">
+                            Migración a la nube, gestión de servidores virtuales, soluciones SaaS y almacenamiento seguro con acceso desde cualquier lugar.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Consultar soluciones <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-database text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Respaldo de Datos</h3>
+                        <p class="text-gray-600 mb-6">
+                            Planes de backup personalizados, recuperación ante desastres y estrategias de continuidad de negocio. Tu información protegida.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Proteger mis datos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-user-cog text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Consultoría TI</h3>
+                        <p class="text-gray-600 mb-6">
+                            Análisis estratégico de infraestructura, planes de optimización tecnológica y asesoramiento para la transformación digital.
+                        </p>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-primary font-medium hover:underline">
+                            Planificar mi IT <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/573053607280" target="_blank" class="inline-block bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold transition">
+                    <i class="fab fa-whatsapp mr-2"></i>Consulta todos nuestros servicios por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Equipo profesional de JCM Comp"
+                         class="rounded-xl shadow-lg w-full">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">
+                        Sobre <span class="text-primary">JCM Comp</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Especialistas en soluciones tecnológicas y soporte técnico profesional. Nuestro enfoque combina experiencia técnica con atención personalizada.
+                    </p>
+                    
+                    <div class="tabs-container mb-8 border-b">
+                        <div class="flex flex-wrap">
+                            <button class="tab active px-4 py-2 font-medium" data-tab="mision">Misión</button>
+                            <button class="tab px-4 py-2 font-medium" data-tab="vision">Visión</button>
+                            <button class="tab px-4 py-2 font-medium" data-tab="valores">Valores</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="mision" class="block">
+                            <p class="text-gray-600 mb-4">
+                                Proporcionar soluciones tecnológicas innovadoras y de alta calidad que potencien el éxito de nuestros clientes, garantizando la disponibilidad y seguridad de sus sistemas.
+                            </p>
+                        </div>
+                        <div id="vision" class="hidden">
+                            <p class="text-gray-600 mb-4">
+                                Ser la empresa líder en soporte técnico y soluciones IT en América Latina, reconocidos por nuestra excelencia técnica y compromiso con el éxito de nuestros clientes.
+                            </p>
+                        </div>
+                        <div id="valores" class="hidden">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Excelencia Técnica:</span> Contratamos y formamos a los mejores profesionales del sector</li>
+                                <li><span class="font-medium">Respuesta Rápida:</span> Disponibilidad 24/7 para emergencias</li>
+                                <li><span class="font-medium">Transparencia:</span> Soluciones claras sin costos ocultos</li>
+                                <li><span class="font-medium">Compromiso:</span> Entregamos más de lo prometido</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center bg-blue-50 rounded-lg p-4">
+                            <div class="text-3xl font-bold text-primary mr-3">5+</div>
+                            <div class="text-gray-600">Años de<br>experiencia</div>
+                        </div>
+                        <div class="flex items-center bg-blue-50 rounded-lg p-4">
+                            <div class="text-3xl font-bold text-primary mr-3">20+</div>
+                            <div class="text-gray-600">Clientes<br>satisfechos</div>
+                        </div>
+                        <div class="flex items-center bg-blue-50 rounded-lg p-4">
+                            <div class="text-3xl font-bold text-primary mr-3">24/7</div>
+                            <div class="text-gray-600">Soporte<br>disponible</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                    Lo que dicen <span class="text-primary">nuestros clientes</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Empresas que han confiado en nuestra experiencia y servicio
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                            <span class="font-bold">M</span>
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-dark">María Rodríguez</div>
+                            <div class="text-gray-500 text-sm">Directora de Tecnología</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Han gestionado nuestra migración a la nube de forma impecable. El equipo técnico siempre está disponible para resolver nuestras dudas a cualquier hora."
+                    </p>
+                    <div class="text-primary">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                            <span class="font-bold">C</span>
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-dark">Carlos Mendoza</div>
+                            <div class="text-gray-500 text-sm">Gerente, Retail Solutions</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Llevamos 5 años con su servicio de soporte remoto y nunca hemos tenido una falla grave. Su capacidad de respuesta ha salvado nuestro negocio en múltiples ocasiones."
+                    </p>
+                    <div class="text-primary">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                            <span class="font-bold">J</span>
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-bold text-dark">José González</div>
+                            <div class="text-gray-500 text-sm">Fundador, Startup Tech</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "El mejor servicio técnico con el que he trabajado. No solo resuelven problemas, sino que proponen soluciones preventivas que nos ahorran tiempo y dinero."
+                    </p>
+                    <div class="text-primary">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/573053607280" target="_blank" class="inline-block bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold transition">
+                    <i class="fab fa-whatsapp mr-2"></i>¡Sé el próximo cliente satisfecho!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+                    Contáctanos <span class="text-primary">Fácilmente</span>
+                </h2>
+                <p class="text-xl text-gray-600 mb-12">
+                    ¿Listo para solucionar tus problemas tecnológicos? Estamos aquí para ayudarte
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+                    <a href="https://wa.me/573053607280" target="_blank" class="contact-icon bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                        <div class="w-14 h-14 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-dark mb-2">WhatsApp</h3>
+                        <p class="text-gray-600 mb-2">Respuesta inmediata</p>
+                        <div class="text-primary font-medium">+57 305 360 7280</div>
+                    </a>
+                    
+                    <div class="contact-icon bg-blue-50 rounded-xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-dark mb-2">Email</h3>
+                        <p class="text-gray-600 mb-2">Asistencia profesional</p>
+                        <div class="text-primary font-medium">contacto@jcmcomp.com.co</div>
+                    </div>
+                    
+                    <div class="contact-icon bg-blue-50 rounded-xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-dark mb-2">Oficina</h3>
+                        <p class="text-gray-600 mb-2">Atención presencial</p>
+                        <div class="text-primary font-medium">Cll 57 # 68C - 65 Int 359 Bello - Antioquia</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+                    <h3 class="text-2xl font-bold text-dark mb-4">
+                        Horarios de Atención
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="text-gray-600">
+                            <span class="font-medium">Lunes a Viernes:</span> 8:00 AM - 5:00 PM
+                        </div>
+                        <div class="text-gray-600">
+                            <span class="font-medium">Sábados:</span> 8:00 AM - 12:00 PM
+                        </div>
+                        <div class="text-gray-600">
+                            <span class="font-medium">Domingos:</span> Emergencias técnicas
+                        </div>
+                        <div class="text-gray-600">
+                            <span class="font-medium">24/7:</span> Soporte Premium
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        <i class="fas fa-info-circle text-primary mr-2"></i> Para emergencias fuera de horario, siempre estamos disponibles por WhatsApp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">JCM Comp</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Soluciones tecnológicas profesionales con atención personalizada y soporte técnico especializado.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/573053607280" target="_blank" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Soporte Técnico</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Seguridad Informática</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Redes y Conectividad</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Servicios en la Nube</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Respaldo de Datos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Enlaces</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-white">Inicio</a></li>
+                        <li><a href="#servicios" class="text-gray-300 hover:text-white">Servicios</a></li>
+                        <li><a href="#nosotros" class="text-gray-300 hover:text-white">Nosotros</a></li>
+                        <li><a href="#testimonios" class="text-gray-300 hover:text-white">Testimonios</a></li>
+                        <li><a href="#contacto" class="text-gray-300 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp text-primary mt-1 mr-3"></i>
+                            <span>+57 305 360 7280</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                            <span>contacto@jcmcomp.com.co</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span>Cll 57 # 68C - 65 Int 359 <br>Bello - Antioquia, Colombia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JCM Comp. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Hide mobile menu after clicking
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Tab Switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Update active tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show active content
+                const tabId = this.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content > div').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
+</html>
